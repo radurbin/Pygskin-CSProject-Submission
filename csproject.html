@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Documentation</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional external stylesheet -->
 </head>
 <body>
     <!-- Header Section -->
@@ -16,17 +15,22 @@
     <!-- Project Introduction -->
     <section id="introduction">
         <h2>Introduction</h2>
-        <p>Provide a brief overview of the project's initial purpose, goals, and general functionality.</p>
+        <p>We were initially told by the client that the goal of this project was to redesign the frontend of the website and make the user experience "modern and responsive".
+            The main priority was the frontend, but the client was also interested in adding a new feature if the time allowed.
+            Due to some issues learning the tech stack and getting the project to run locally, we spent Sprint 1 designing the frontend in Figma while we worked with the client to run the project on our machines.
+            We spent Sprint 2 actually coding and implementing this frontend design in the code, as well as adding user authentication, and we spent Sprint 3 implementing the new Sports Betting feature to the page.
+        </p>
     </section>
 
     <!-- Starting Point / Initial State -->
     <section id="initial-state">
         <h2>Initial State</h2>
-        <p>Discuss the state of the project at the start, including any provided files, frameworks, or configurations.</p>
+        <p>The initial state of the project we were given was a single index page that contained a variety of forms and buttons to access different pages in the project. This page had a simple design, and the backend worked the way it was supposed to.
+            Our goal was to redesign the website so that it utilized the navbar to navigate between pages, and had a new organization that was simpler to use. We also wanted to remove the unnecessary pages that each contained a different form. 
+        </p>
         <ul>
-            <li>Description of initial codebase</li>
-            <li>Existing functionality and limitations</li>
-            <li>Any legacy systems or structures involved</li>
+            <li>The project uses Django, Docker, Umami, and Nginx primarily to run. To run this locally, we had to follow the README file provided by the client, but we had some issues with machine compatibility and certificates. The next group will likely need to initially work closely with the client to run the project locally on their machine.</li>
+            <li>The primary functions of the initial website are: see machine learning predictions with cybercoaches, view coach stats, visualize conference realignment, view team rankings, and sign up for email updates.</li>
         </ul>
     </section>
 
@@ -71,9 +75,5 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Demonstration" frameborder="0" allowfullscreen></iframe>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>For more information or queries, please contact [Your Contact Information].</p>
-    </footer>
 </body>
 </html>
