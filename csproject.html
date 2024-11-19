@@ -37,34 +37,35 @@
     <!-- Changes and Modifications -->
     <section id="changes-made">
         <h2>Changes and Modifications</h2>
-        <p>Outline the changes made during the project. Highlight major features added, bugs fixed, or architectural updates.</p>
+        <p>The primary changes involved a complete frontend redesign, structure changes, user authentication, and the introduction of a betting feature.</p>
         <ul>
-            <li>New features added</li>
-            <li>Bug fixes and patches</li>
-            <li>Structural or performance enhancements</li>
+            <li>Changing the frontend involved changing the HTML files and making custom JS and CSS files for each page.</li>
+            <li>Changing the website structure included creating a navbar with page links, individual pages with less clicking required, and new backend form structures to ensure that all of the data was passed to each page properly.</li>
+            <li>The database was redesigned to better use users for authentication. It was also redesigned for the betting features added.</li>
+            <li>The CFB betting feature was added. This was a new page with new views and actions. CFBDB and the Odds API were used.</li>
         </ul>
     </section>
 
     <!-- How to Edit and Work on the Project -->
     <section id="how-to-edit">
         <h2>How to Edit and Work on the Project</h2>
-        <p>Provide guidance on how to modify the project code, including file structures, dependencies, and key areas to work on.</p>
+        <p>Once the project is successfully running locally on your machine and you can see it on localhost with the database working, the project can be modifed simply.</p>
         <ul>
-            <li>Project setup instructions</li>
-            <li>Key files and their purposes</li>
-            <li>Dependencies and environment setup</li>
-            <li>Common tasks and how to perform them</li>
+            <li>To edit the frontend, navigate to the HTML page that you want to edit and the corresponding CSS/JS pages. These can be edited there. Keep in mind that parts of the actual pages are put together when the project is composed with Docker and Django. To see any changes when they are made, simply run "docker compose up" and go to localhost in a browser. You may need to clear your cache to see the changes.</li>
+            <li>To edit any backend forms or actions, go to views.py. It is best to look at similar views and actions to understand how to interact with the database and the frontend with Django. This is similar to an MVC structure.</li>
+            <li>To create a new page, start by duplicating an HTML page. This page will need to have a corresponding view in views.py, and it will need to be included in urls.py so that the page can be accessed.</li>
+            <li>For any database migrations, "docker compose build" must be re-run before seeing the changes.</li>
         </ul>
     </section>
 
     <!-- Current State of the Project -->
     <section id="current-state">
         <h2>Current State of the Project</h2>
-        <p>Describe the current state of the project, including functionality, known issues, and pending work (if any).</p>
+        <p>The current state of the project, including functionality, known issues, and pending work.</p>
         <ul>
-            <li>Summary of current features</li>
-            <li>Known issues and limitations</li>
-            <li>Future improvements or backlog tasks</li>
+            <li>Currently, the Cybercoaches, Coach Stats, and other similar features work as expected. These pages are mobile compatible and have been redesigned.</li>
+            <li>The new betting feature works if the database has been updated with that week's games. As of now, the python script to update the database needs to be run manually every week. There is one script to get that week's games, and there is one script to get last week's scores and update the outcomes of all user bets.</li>
+            <li>The primary pending feature is the implementation of the scheduler. This has been started, but it is not fully implemented.</li>
         </ul>
     </section>
 
@@ -72,7 +73,7 @@
     <section id="video-demo">
         <h2>Video Demonstration</h2>
         <p>Watch the video demonstration of the project in action:</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Demonstration" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_WILL_GO_HERE" title="Project Demonstration" frameborder="0" allowfullscreen></iframe>
     </section>
 
 </body>
