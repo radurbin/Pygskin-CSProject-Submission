@@ -34,6 +34,8 @@
         </ul>
     </section>
 
+    <h2> ** NOTE:  cs-project is the latest branch **</h2>
+
     <!-- Changes and Modifications -->
     <section id="changes-made">
         <h2>Changes and Modifications</h2>
@@ -72,11 +74,11 @@
     <section id="scheduler">
         <h2>The Scheduler</h2>
         <p>
-        The scheduler was implemented with the celery and celery-beat python module. The reason we began implementing a scheduler that was to run update_scores.py populate_games.py every week. 
-        To enact this change, a celery.py file needed to be added to the myproject directory and a tasks.py to the root of the pygskin_webapp directory. Also, small things needed to be tweaked in the docker-compose.yml, the requirements.txt, Dockerfile and the settings.py. 
-        Technically, the scheduler works in the scheduler branch right now, meaning it runs the defined task in tasks.py, but once I got the scheduler to work the Django forms on the webpage would no longer run. 
-        That will be the first thing you will need to fix before you get it to run the other scripts. Then something will need to be defined in tasks.py to run the scripts on a weekly basis. Use docker compose logs to debug. 
-        One of the main errors I get when running it is that it has a problem loading static files which leads me to believe in the docker-entrypoint.sh there could be a problem with this line: “python manage.py collectstatic –noinput”
+            The scheduler was implemented with the celery and celery-beat python module. The reason we began implementing a scheduler that was to run update_scores.py populate_games.py every week. 
+            To enact this change, a celery.py file needed to be added to the myproject directory and a tasks.py to the root of the pygskin_webapp directory. Also, small things needed to be tweaked in the docker-compose.yml, the requirements.txt, Dockerfile and the settings.py. 
+            Technically, the scheduler works in the scheduler branch right now, meaning it runs the defined task in tasks.py, but once I got the scheduler to work the Django forms on the webpage would no longer run. 
+            That will be the first thing you will need to fix before you get it to run the other scripts. Then something will need to be defined in tasks.py to run the scripts on a weekly basis. Use docker compose logs to debug. 
+            One of the main errors I get when running it is that it has a problem loading static files which leads me to believe in the docker-entrypoint.sh there could be a problem with this line: “python manage.py collectstatic –noinput”
         </p>
 
     </section>
