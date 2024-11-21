@@ -135,6 +135,40 @@
         </ul>
     </section>
 
+
+    <section id="cybercoaches-and-coach-stats">
+        <h2>Cybercoaches and Coach Stats</h2>
+        <p>
+        Cybercoaches are machine learning models that the client trained on College Football data. Essentially, given a scenario, they predict whether the coach would call a pass or rush play.
+        On the website, users can navigate to the cybercoach_select.html page, select a cybercoach, and then select a real year/game/drive that the coach coached, or make a custom scenario. Then, they click submit, and see what the ML model predicts the coach would run.
+        If they select a real drive, the page passes the coach, year, game, and drive to the prediction.html page through a POST request. The prediction in views.py handles getting the actual data and outputting it to the page.
+        Similarly, if the user makes a custom scenario, the page makes a POST request to custom_prediction.html. Information about the backend communicating with the frontend can be seen in the views.py file and the django variables in the HTML pages.
+        These are in script tags and not in the separate JS file because it broke when the Django variables were in the JS files.
+        </p>
+        <p>
+            A few notes about this page: the page refreshes when a new cybercoach is selected because it has to pull the data for it. It does not refresh when a year or drive is selected because I pull in all the drives as an array when a cybercoach is chosen.
+            The "custom scenario" form on the left has some formatting done through javascript as soon as the page loads. This is because I wanted the page to look different, but I could not directly change parts of the form because it is being generated from forms.py with Django.
+            Please see the comments in the code to understand how it works more in depth.
+        </p>
+        <p>
+            Coach stats is pretty self explanatory, but I need to note that there is some JS for it in the navbar.js file. This is because when you initially click the coach stats header to go to the page, it shows an empty form, and Django sort of freaks out if the form doesn't have a selection.
+            To fix this, I made it so that selecting a coach refreshes the page with the new coach selected, then everything works normally. This is in navbar.js because coach_stats.js wouldn't load until a coach is selected.
+            Similarly, there were some weird things happening with the footer on that page when a coach hasn't been selected yet, so there is some conditional formatting through JavaScript on navbar.js because it always loads.
+        </p>
+    </section>
+
+    <section id="place-bets">
+        <h2>Place Bets</h2>
+        <p>
+        The place bets page pulls games from the database and displays bets to be made by the user. The user can select one (parlays are not implemented) and place a bet. The main thing to note is that the populate_games.py
+        and update_scores.py are required to update the database with new games and game scores. This should be run weekly and ideally scheduled. I tried to
+        implement error handling to prevent edge cases of users cheating. For example, if a game starts while they are on the page, they will not be able to bet on it.
+        This just checks if the game start time is after their machine time. However, this means they could adjust their machine clock and bet on a game that has already happened.
+        This is a rare edge case, but it should be fixed by the next group to prevent users cheating. Some sort of global clock API or database flag could fix it.
+        When a bet is placed, it calls the place_bet action in views.py. There are comments to explain more of the JS in the files.
+        </p>
+    </section>
+
     <!-- Video Demonstration -->
     <section id="video-demo">
         <h2>Video Demonstration</h2>
