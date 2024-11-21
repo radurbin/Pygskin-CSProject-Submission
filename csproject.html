@@ -104,17 +104,31 @@
     <section id="views">
         <ul>
             <li>
-                <b>login_view()</b>: was added for the new login page. This view uses Django’s built-in user authentication feature. 
+                <b>login_view()</b>: view was added for the new login page. This view uses Django’s built-in user authentication feature. 
                 The view limits the user to 5 login attempts and will lock the user out of their account for 5 minuets if they exceed these attempts.
             </li>
             <li>
-                <b>profile_view()</b>: was added to display all of the user’s information on the profile page. This view is only accessible if the user is logged in.
+                <b>profile_view()</b>: view was added to display all of the user’s information on the profile page. This view is only accessible if the user is logged in.
             </li>
             <li>
                 <b>place_bets()</b>: view was added to display all of the games that a user can bet on. This will be displayed on the place bets page.
             </li>
             <li>
-                <b>place_bet()</b>view is called when a user submits a bet. This view will put all of the necessary information for that user’s bet in the database.
+                <b>place_bet()</b>: view is called when a user submits a bet. This view will put all of the necessary information for that user’s bet in the database.
+            </li>
+        </ul>
+    </section>
+
+    <section id="scripts">
+        <ul>
+            <li>
+                <b>Populate_games.py</b>: is a script that is used to populate all the games and the data needed for betting in the database. 
+                This script makes calls to the College Football Database (CFBDB) and the Odds-API. The API keys for both should be in your .env file. 
+                Variable names and how to pull information for each of these APIs can be found in the documentation of their corresponding websites.
+            </li>
+            <li>
+                <b>Update_scores.py</b>: is a script that is used to all the scores for each game and adjust the credits for each user. 
+                This script should be run at the end of the week after all the games for that week have been played. This script only uses the CFBDB API. 
             </li>
         </ul>
     </section>
