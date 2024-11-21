@@ -93,6 +93,32 @@
         </p>
     </section>
 
+    <section id="forms">
+        <h2>Changed Forms</h2>
+        <p>
+            The <i>Subscriber</i> form was kept very similar to the original form. The only new feature is that the form now adds a user to the <i>User</i> table 
+            and assigns that user with credits in the <i>UserCredits</i> table. All of this is done automatically when a user signs up on the website. 
+        </p>
+    </section>
+
+    <section id="views">
+        <ul>
+            <li>
+                <b>login_view()</b>: was added for the new login page. This view uses Django’s built-in user authentication feature. 
+                The view limits the user to 5 login attempts and will lock the user out of their account for 5 minuets if they exceed these attempts.
+            </li>
+            <li>
+                <b>profile_view()</b>: was added to display all of the user’s information on the profile page. This view is only accessible if the user is logged in.
+            </li>
+            <li>
+                <b>place_bets()</b>: view was added to display all of the games that a user can bet on. This will be displayed on the place bets page.
+            </li>
+            <li>
+                <b>place_bet()</b>view is called when a user submits a bet. This view will put all of the necessary information for that user’s bet in the database.
+            </li>
+        </ul>
+    </section>
+
     <!-- Video Demonstration -->
     <section id="video-demo">
         <h2>Video Demonstration</h2>
